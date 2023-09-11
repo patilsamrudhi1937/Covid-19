@@ -1,0 +1,779 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="referrer" content="never">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>Covid-19 Infomation</title>
+    <link rel="icon" type="images" href="icon/19.png">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: aquamarine;
+            color: burlywood;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        h1 {
+            color: white;
+            text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+            font-size: 2.5em;
+            /* 40px/16=2.5em */
+            font-family: ui-monospace;
+        }
+        
+        .container {
+            width: 1000px;
+            height: 300px;
+            background-color: burlywood;
+            position: center;
+            margin: 0ch;
+            border: 2px solid white;
+            shape-outside: -moz-element();
+        }
+        
+        h2 {
+            color: white;
+            font-family: ui-monospace;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 2px black, 0 0 25px yellow, 0 0 5px red;
+        }
+        
+        .float-image {
+            width: 350px;
+            height: 200px;
+            margin: 0ch;
+            border: 2px solid white;
+            float: right;
+            margin-top: 2px;
+        }
+        
+        p {
+            color: gray;
+            font-family: fantasy;
+            position: -webkit-sticky;
+        }
+        
+        .header-hr {
+            border: none;
+            border-top: 2px dashed #f00;
+            color: #fff;
+            background-color: #fff;
+            height: 1px;
+            width: 50%;
+        }
+        
+        .header-para {
+            color: black;
+            font-family: fantasy;
+        }
+        
+        .header-head {
+            color: black;
+            font-family: fantasy;
+        }
+        
+        .column {
+            float: left;
+            width: 25%;
+            padding: 0 10px;
+        }
+        
+        .row {
+            margin: 0 -5px;
+        }
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+            }
+        }
+        
+        .card {
+            box-shadow: 0 4px 8px 0 deeppink;
+            padding: 16px;
+            text-align: center;
+            background-color: #f1f1f1;
+            color: blueviolet;
+            font-family: sans-serif;
+        }
+        
+        .card-ul {
+            background-color: cornsilk;
+            color: red;
+        }
+        
+        .card-cta-text {
+            background-color: red;
+            color: white;
+        }
+        
+        .card-hr-one {
+            color: blue;
+            font-family: fantasy;
+        }
+        
+        .rounded-container {
+            width: 100%;
+            height: 100px;
+            border-radius: 1px groove red;
+            background-color: floralwhite;
+            background-origin: padding-box;
+            color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .web-slice {
+            width: 30px;
+            height: 70px;
+        }
+        
+        .web-slice::after {
+            content: '';
+            clear: both;
+            display: table;
+            float: left;
+        }
+        
+        .grid-list {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            display: block;
+        }
+        
+        .btn1-btn2 {
+            background-color: yellow;
+            border: 1px solid white;
+            color: black;
+            padding: 10px 150px;
+            cursor: pointer;
+            width: 40%;
+            display: table;
+            float: left;
+        }
+        
+        .btn1-btn2:after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        .btn1-btn2 button:not(:last-child) {
+            border-bottom: none;
+            border-right: none;
+        }
+        
+        .btn1-btn2 button:hover {
+            background-color: orangered;
+        }
+        
+        .ul {
+            float: left;
+            margin: 0px, 5px;
+            display: inline;
+            list-style-image: url(square.gif);
+        }
+        
+        .btn1-text {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: black;
+            float: left;
+        }
+        
+        h3 {
+            color: white;
+            text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+            font-size: 2.5em;
+            /* 40px/16=2.5em */
+            font-family: ui-monospace;
+        }
+        
+        h4 {
+            color: gray;
+            font-family: fantasy;
+        }
+        
+        .list-container {
+            padding: 0 20px;
+        }
+        
+        .list-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pdf-list {
+            display: flex;
+            align-items: center;
+            height: 300px;
+            transform: translateX(0);
+            transition: all 1s ease-in-out;
+        }
+        
+        .pdf-list-item {
+            margin-right: 30px;
+            position: relative;
+        }
+        
+        .pdf-list-item:hover .pdf-list-item-img {
+            transform: scale(1.2);
+            margin: 0 30px;
+            opacity: 0.5;
+        }
+        
+        .pdf-list-item:hover .list-item-title,
+        .pdf-list-item:hover .list-item-desc,
+        .pdf-list-item:hover .list-item-button {
+            opacity: 1;
+        }
+        
+        .pdf-list-item-img {
+            transition: all 1s ease-in-out;
+            width: 270px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+        
+        .pdf-list-item-title {
+            padding: 0 10px;
+            font-size: 32px;
+            font-weight: bold;
+            position: absolute;
+            top: 10%;
+            left: 50px;
+            opacity: 0;
+            transition: 1s all ease-in-out;
+        }
+        
+        .pdf-list-item-desc {
+            padding: 10px;
+            font-size: 14px;
+            position: absolute;
+            top: 30%;
+            left: 50px;
+            width: 230px;
+            opacity: 0;
+            transition: 1s all ease-in-out;
+        }
+        
+        .container.active {
+            background-color: white;
+        }
+        
+        .img-res-mweb-slice {
+            width: 500px;
+            height: 300px;
+            border: 2px solid white;
+            transform: All 1s ease-in-out;
+            object-fit: cover;
+        }
+        
+        .img-res-hyper1 {
+            width: 500px;
+            height: 300px;
+            border: 2px solid white;
+        }
+        
+        .boxes {
+            width: 50%;
+            float: left;
+        }
+        
+        .mainDiv {
+            width: 50%;
+            margin: auto;
+        }
+        
+        .img {
+            max-width: 100%;
+        }
+        
+        .youtube-mob1-youtube-web1 {
+            width: 230px;
+            height: 250px;
+            border: 2px solid white;
+            float: left;
+            clear: both;
+        }
+        
+        .img-res {
+            width: 400px;
+            height: 400px;
+        }
+        
+        .header {
+            width: 350px;
+            padding: 10px 0;
+            text-align: center;
+            background: #4c5270;
+            color: white;
+        }
+        
+        .btn-bgstroke {
+            font-size: 20px;
+            display: inline-block;
+            border: 1px solid white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 300;
+            margin-top: 30px;
+        }
+        
+        .btn-bgstroke:hover {
+            background-color: red;
+            color: #4c5270;
+        }
+        
+        h5 {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: red;
+        }
+        
+        footer {
+            background-color: #333;
+            overflow: hidden;
+            color: white;
+            font-family: fantasy;
+            font-size: 20px;
+        }
+        
+        footer a {
+            text-decoration: none;
+            padding: 20px;
+            text-align: center;
+            float: left;
+            color: white;
+        }
+    </style>
+
+    <body>
+        <center><b><em><h1>Covid-19</h1></em></b></center>
+        <center>
+            <main>
+                <section>
+                    <div class="container">
+                        <img class="float-image" src="icon/111.jpg" alt="">&nbsp;
+                        <b><h2>&nbsp; Combating Coronavirus
+                                    in India</h2></b>
+                        <p>
+                            As we are staring at a potential rise of coronavirus in India, testing, tracing and treating is the ideal way of curbing this spread. Testing on time helps provide early treatment which, in turn, prevents the spread to your loved ones and others around
+                            you.
+                        </p>
+                        <hr clas="header-hr">
+                        <div class="header-para">
+                            <p>Experiencing COVID-like symptoms? To book a COVID-19 test at home, call on</p>
+                        </div>
+                        <div class="header-head">
+                            <a href="tel:18002122353" style="color: #3b3b3b !important; text-decoration: none; cursor: pointer;">
+                                      1800- 212- 2353
+                                    </a>
+                        </div>
+                    </div>
+
+        </center>
+        </section>
+        <section>
+            <h2>
+                What test should you book for COVID-19?
+            </h2>
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <div class="card-one">
+                            <p> RT-PCR Test</p>
+                            <hr class="card-hr-one"> The RT-PCR Test is a gold standard test to detect active coronavirus infection
+                            <hr class="card-hr-one-small"> It is highly recommended to take this test if you:
+                            <ul class="card-ul card-one-color">
+                                <li class="card-li">Have flu-like symptoms and think it could be the coronavirus</li>
+                                <li class="card-li">Have been experiencing flu-like symptoms for a few days along with breathlessness</li>
+                                <li class="card-li">Have come in close contact with a COVID-19 case</li>
+                                <li class="card-li">Have an elderly or person with chronic conditions at home who is experiencing COVID-19 like symptoms</li>
+                            </ul>
+
+                            <a href="https://www.1mg.com/labs/test/coronavirus-covid-19-test-33462?utm_source=web&amp;utm_medium=landing_page_promo&amp;utm_campaign=coronavirus_covid19&amp;utm_term=coronavirus-covid-19-test" style="text-decoration: none; cursor: pointer" target="_blank">
+                                <div class="card-cta cta-bg1">
+                                    <span class="card-cta-text">Book Now &gt;</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <p>COVID-19 Antibody IgG Test</p>
+                        <hr class="card-hr-two"> The Antibody Test detects any past occurrence of the infection by looking for COVID-19 antibodies.
+                        <hr class="card-hr-two-small"> Who should take the test ?
+                        <ul class="card-ul card-two-color">
+                            <li class="card-li">Think you contracted the coronavirus in the past and have already recovered</li>
+                            <li class="card-li">Want to know if your body has encountered the infection and made antibodies against the coronavirus</li>
+                            <li class="card-li">Have recovered from COVID-19 and want to help people who need plasma therapy</li>
+                        </ul>
+
+                        <a href="https://www.1mg.com/labs/test/covid-antibody-igg-33531?utm_source=web&amp;utm_medium=landing_page_promo&amp;utm_campaign=coronavirus_covid19&amp;utm_term=covid-19-antibody-test" style="text-decoration: none; cursor: pointer; " target="_blank">
+                            <div class="card-cta cta-bg2">
+                                <span class="card-cta-text">Book Now &gt;</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="Column">
+                    <div class="card">
+                        <p>Covid Home Care Basic</p>
+                        <hr class="card-hr-three"> The COVID Home Care Basic package offers 34 tests (Includes CRP, CBC with NLR, ESR, Blood urea and more) that give important clues about the various health parameters.
+                        <hr class="card-hr-three-small"> This test is recommended if you:
+                        <ul class="card-ul card-three-color">
+                            <li class="card-li">Have been diagnosed with COVID-19 and need to understand how COVID-19 has impacted your health</li>
+                            <li class="card-li">Are getting COVID-19 care at home and notice any worsening of the symptoms</li>
+                            <li class="card-li">Have been advised by the doctor to check your biomarkers</li>
+                        </ul>
+
+
+                        <a href="https://www.1mg.com/labs/test/covid-home-care-basic-34903?utm_source=web&amp;utm_medium=landing_page_promo&amp;utm_campaign=coronavirus_covid19&amp;utm_term=covid-home-care-basic" style="text-decoration: none; cursor: pointer; " target="_blank">
+                            <div class="card-cta cta-bg3">
+                                <span class="card-cta-text">Book Now &gt;</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <p>COVID Home Care Complete</p>
+
+                        <hr class="card-hr-four"> The COVID Home Care Complete package offers 41 tests (Includes D-Dimer, IL-6, HbA1c, Serum electrolytes, etc., in addition to CRP, CBC with NLR, ESR, and more) that give important clues about the various health parameters.
+
+                        <hr class="card-hr-four-small"> This test is recommended if you:
+
+                        <ul class="card-ul card-four-color">
+                            <li class="card-li">Have been diagnosed with COVID-19 and need to understand how COVID-19 has impacted your health</li>
+                            <li class="card-li">Are getting COVID-19 care at home and notice any worsening of the symptoms</li>
+                            <li class="card-li">Have been advised by the doctor to check your biomarkers</li>
+                        </ul>
+
+                        <a href="https://www.1mg.com/labs/test/covid-home-care-complete-34904?utm_source=web&amp;utm_medium=landing_page_promo&amp;utm_campaign=coronavirus_covid19&amp;utm_term=covid-home-care-complete" style="text-decoration: none; cursor: pointer; " target="_blank">
+                            <div class="card-cta cta-bg4">
+                                <span class="card-cta-text">Book Now &gt;</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            </<section>
+            <br />
+            <br />
+            <section>
+                <div class="m-t-2">
+                    <div class="choice-1mg">
+                        <div class="rounded-container ">
+                            <div class="choice-1mg-img">
+                                <img class="img-res-hyper2" src="https://marketing-compaigns.s3.ap-south-1.amazonaws.com/emailer/Corona_landing_page/1mg-choice-img.svg" alt="1mg-choice">
+                            </div>
+                            <div class="choice-1mg-text">
+                                People with comorbidities such as diabetes and heart disease should opt for <span style="font-weight: 600;">COVID Home Care Complete</span> to cover more biomarkers which allows a nuanced view of their health status.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section>
+                <ul>
+                    <center><b><em><h3>In Covid-19 Follow the Rule: -</h3></em></b>
+                        <li><b><h4>While it is crucial to mention hygiene standards like washing your hands frequently</h4></b></li>
+                        <li><b><h4> Using an alcohol sanitizer, in case you are travelling to disinfect your hands</h4></b></li>
+                        <li><b><h4>Wearing a mask (cover your nose and mouth)</h4></b></li>
+                        <li><b><h4>Avoiding touching your hand or mouth.</h4></b></li>
+                    </center>
+                </ul>
+            </section>
+            <section>
+
+                <div class="list-container">
+                    <hr clas="header-hr">
+                    <hr clas="header-hr">
+                    <b><center><h2 class="list-title">English Language</h2></center></b>
+                    <div class="list-wrapper">
+                        <div class="pdf-list">
+                            <div class="pdf-list-item">
+                                <a href="https://marketing-compaigns.s3.ap-south-1.amazonaws.com/emailer/Coronavirus-Ebooks/English/Double-masking-tips-by-1mg.pdf "><img class="pdf-list-item-img " src="https://marketing-compaigns.s3.ap-south-1.amazonaws.com/emailer/Corona_landing_page/Double-masking-tips-by-1mg.png
+                                    " alt="Immunity Booster ebook by 1mg ">
+
+
+                            </div>
+                            <div class="pdf-list-item ">
+                                <a href="https://marketing-compaigns.s3.ap-south-1.amazonaws.com/emailer/Coronavirus-Ebooks/English/Homecare-tips-for-mild-cases-by-1mg.pdf "><img class="pdf-list-item-img " src="https://marketing-compaigns.s3.ap-south-1.amazonaws.com/emailer/Corona_landing_page/Homecare-tips-for-mild-cases-by-1mg.png" alt="Immunity Booster ebook by 1mg">
+
+
+                            </div>
+                            <div class="pdf-list-item">
+                                <a href="https://bit.ly/Immunity_Booster_ebook_by_1mg "><img class="pdf-list-item-img " src="https://marketing-compaigns.s3.ap-south-1.amazonaws.com/emailer/Coronavirus-Ebooks/English/newebbok.png" alt="Immunity Booster ebook by 1mg">
+
+
+                            </div>
+                            <div class="pdf-list-item">
+                                <a href="https://bit.ly/COVID-19-Testing-All-you-need-to-know-by-1mg"><img class="pdf-list-item-img " src="https://res.cloudinary.com/dusqx2w0c/image/upload/v1588838695/marketing/aqgjlv14zsebgglrp22k.jpg" alt="COVID 19 Testing All you need to know by 1mg">
+
+
+                            </div>
+                            <br />
+                            <div class="pdf-list-item">
+                                <a href="https://bit.ly/Making-safety-masks-at-home-amid-COVID-19-by-1mg "></a><img class="pdf-list-item-img " src="https://res.cloudinary.com/du8msdgbj/image/upload/v1587160664/marketing/e4u9msu4du45uwyqdq3p.jpg" alt="Making safety masks at home amid COVID-19 by 1mg">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-container">
+                    <b><center><h2 class="list-title">Hindi Language</h2></center></b>
+                    <div class="list-wrapper">
+                        <div class="pdf-list">
+                            <div class="pdf-list-item">
+                                <a href="https://bit.ly/कोरोना-वायरस-और-बच्चों-की-देखभाल-1mg-द्वारा-जारी"><img class="pdf-list-item-img " src="https://res.cloudinary.com/du8msdgbj/image/upload/v1586254044/marketing/ampzv5cxloxj88xdakeo.jpg
+                                    " alt="कोरोना-वायरस-और-बच्चों-की-देखभाल-1mg-द्वारा-जार">
+
+
+                            </div>
+                            <div class="pdf-list-item ">
+                                <a href="https://bit.ly/COVID-19-लॉकडाउन-के-लिए-आवश्यक-चेकलिस्ट-1mg-द्वारा-जारी "><img class="pdf-list-item-img " src="https://res.cloudinary.com/du8msdgbj/image/upload/v1586411713/marketing/nwsfuarm2fdwcppos5ns.jpg" alt="COVID-19-लॉकडाउन-के-लिए-आवश्यक-चेकलिस्ट-1mg-द्वारा-जारी">
+
+
+                            </div>
+                            <div class="pdf-list-item">
+                                <a href="https://bit.ly/COVID-19-होम-डिलीवरी-पैकेज-लेते-समय-बरतें-ये-सावधानियाँ-1mg-द्वारा-जारी"><img class="pdf-list-item-img " src="https://res.cloudinary.com/du8msdgbj/image/upload/v1586411740/marketing/u5my7vlivchlneubzvmk.jpg" alt="COVID-19-होम-डिलीवरी-पैकेज-लेते-समय-बरतें-ये-सावधानियाँ-1mg-द्वारा-जारी">
+
+
+                            </div>
+                            <div class="pdf-list-item">
+                                <a href="https://bit.ly/कोरोना-वायरस-और-सामाजिक-दूरी-1mg-द्वारा-जारी"><img class="pdf-list-item-img " src="https://res.cloudinary.com/du8msdgbj/image/upload/v1586250984/marketing/whzp9jmz86edz4kebcex.jpg" alt="कोरोना-वायरस-और-सामाजिक-दूरी-1mg-द्वारा-जारी">
+
+
+                            </div>
+                            <br />
+                            <div class="pdf-list-item">
+                                <a href="https://bit.ly/Coronavirus-helpguide-by-1mg"><img class="pdf-list-item-img " src="https://res.cloudinary.com/du8msdgbj/image/upload/v1586411636/marketing/f35boebzizjlpyspyah4.jpg" alt="Coronavirus helpguide by 1mg">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div id="maindiv">
+                    <div id="divOne" class="boxes">
+                        <a href="https://www.1mg.com/categories/coronavirus-prevention-925?utm_source=web&amp;utm_medium=landing_page_promo&amp;utm_campaign=coronavirus_covid19&amp;utm_term=coronavirus-prevention" style="text-decoration: none; cursor: pointer;" target="_blank">
+                            <img class="img-res-mweb-slice" src="https://marketing-compaigns.s3.ap-south-1.amazonaws.com/emailer/Corona_landing_page/corona-prevention-mweb.png" alt="Coronavirus Prevention">
+                        </a>
+                    </div>
+                    <div class="boxes" id="divTwo" style="background-color: transparent;">
+                        <ul class="grid-list5 p-t-20 m-p-t-0">
+                            <li class=" r-p-20  m-l-p-0 m-r-p-0">
+                                <a href="https://www.1mg.com/categories/personal-care/skin-care/hand-sanitizers-handwash-305?utm_source=web&amp;utm_medium=landing_page_promo&amp;utm_campaign=coronavirus_covid19&amp;utm_term=hand-sanitizers-handwash" style="text-decoration: none; cursor: pointer;"
+                                    target="_blank">
+                                    <img class="img-res-hyper1" src="https://marketing-compaigns.s3.ap-south-1.amazonaws.com/emailer/Corona_landing_page/hand-wash.png" alt="handwash &amp; hand-sanitizers">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="divThree" class="boxes" style="background-color: transparent;">
+                        <ul class="grid-list5 p-t-20 m-p-t-0">
+                            <li class=" l-p-10 r-p-10 m-l-p-0 m-r-p-0 ">
+                                <a href="https://www.1mg.com/categories/coronavirus-prevention/protective-masks-277?utm_source=web&amp;utm_medium=landing_page_promo&amp;utm_campaign=coronavirus_covid19&amp;utm_term=protective-masks" style="text-decoration: none; cursor: pointer;" target="_blank">
+                                    <img class="img-res-hyper1" src="https://marketing-compaigns.s3.ap-south-1.amazonaws.com/emailer/Corona_landing_page/mask&amp;face.png" alt="Mask &amp; face shields">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="boxes" id="divFour" style="background-color: transparent;">
+                        <ul class="grid-list5 p-t-20 m-p-t-0">
+                            <li class="l-p-20  m-l-p-0  m-r-p-0 m-p-t-10">
+                                <a href="https://www.1mg.com/categories/fitness-supplements/immunity-boosters-142?utm_source=web&amp;utm_medium=landing_page_promo&amp;utm_campaign=coronavirus_covid19&amp;utm_term=immunity-boosters" style="text-decoration: none; cursor: pointer;" target="_blank">
+                                    <img class="img-res-hyper1" src="https://marketing-compaigns.s3.ap-south-1.amazonaws.com/emailer/Corona_landing_page/immunity.png" alt="Immunity Boosters">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="boxes" id="divFive" style="background-color: transparent;">
+                        <ul class="grid-list5 p-t-20 m-p-t-0">
+                            <li class=" r-p-20 m-l-p-0 m-r-p-0 m-p-t-10 p-t-20">
+                                <a href="https://www.1mg.com/categories/coronavirus-prevention/thermometers-device-298?utm_source=web&amp;utm_medium=landing_page_promo&amp;utm_campaign=coronavirus_covid19&amp;utm_term=thermometers-device" style="text-decoration: none; cursor: pointer;"
+                                    target="_blank">
+                                    <img class="img-res-hyper1" src="https://marketing-compaigns.s3.ap-south-1.amazonaws.com/emailer/Corona_landing_page/thermometer.png" alt="Thermometers">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="boxes" id="divSix" style="background-color: transparent;">
+                        <ul class="grid-list5 p-t-20 m-p-t-0">
+                            <li class=" l-p-10 r-p-10 m-l-p-0 m-r-p-0 m-p-t-10  p-t-20 d-flex">
+                                <a href="https://www.1mg.com/categories/coronavirus-prevention/disinfectants-226?utm_source=web&amp;utm_medium=landing_page_promo&amp;utm_campaign=coronavirus_covid19&amp;utm_term=disinfectants" style="text-decoration: none; cursor: pointer;" target="_blank">
+                                    <img class="img-res-hyper1" src="https://marketing-compaigns.s3.ap-south-1.amazonaws.com/emailer/Corona_landing_page/disinfectants.png" alt="Disinfectants">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="boxes" id="divSeven" style="background-color: transparent;">
+                        <ul class="grid-list5 p-t-20 m-p-t-0">
+                            <li class=" l-p-20  m-l-p-0 m-r-p-0 m-p-t-10  p-t-20 d-flex">
+                                <a href="https://www.1mg.com/categories/coronavirus-prevention/pulse-oximeters-825?utm_source=web&amp;utm_medium=landing_page_promo&amp;utm_campaign=coronavirus_covid19&amp;utm_term=pulse-oximeters" style="text-decoration: none; cursor: pointer;" target="_blank">
+                                    <img class="img-res-hyper1" src="https://marketing-compaigns.s3.ap-south-1.amazonaws.com/emailer/Corona_landing_page/pulse_oxi.png" alt="Pulse Oximeters">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+
+            <section>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <hr class="header-hr">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="list-container">
+                    <h3 class="list-title">Watch these detailed videos to get answers to commonly asked questions on coronavirus in India: </h3>
+                    <div class="list-wrapper">
+                        <div class="pdf-list">
+                            <div class="pdf-list-item">
+                                <ul>
+                                    <li>
+                                        <div>
+                                            <iframe class="youtube-mob1-youtube-web1" width="100%" height="auto" src="https://www.youtube.com/embed/P4TKxfj3tu4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="pdf-list-item">
+                                <ul>
+                                    <li>
+                                        <div>
+                                            <iframe class="youtube-mob1-youtube-web1" width="100%" height="auto" src="https://www.youtube.com/embed/UN7fbohf0uw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="pdf-list-item">
+                                <ul>
+                                    <li>
+                                        <div ">
+                                            <iframe class="youtube-mob1-youtube-web1 " width="100% " height="auto " src="https://www.youtube.com/embed/H3H0XCyQgXY " frameborder="0 " allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture
+                                            " allowfullscreen=" "></iframe>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="pdf-list-item ">
+                                <ul>
+                                    <li>
+                                        <div>
+                                            <iframe class="youtube-mob1-youtube-web1 " width="100% " height="auto " src="https://www.youtube.com/embed/pso2qbEj0Y4 " frameborder="0 " allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture
+                                            " allowfullscreen=" "></iframe>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <center>
+                <section class="header ">
+                    <div class="row m-p-0 m-p-0 m-p-0 ">
+                       <div class="col-sm-7 m-p-0 align-self-center ">
+                          <b><h2>Think you have fever, cold or cough?</h2></b>
+                          <div class="full-banner-text ">
+                             Talk to our experts online
+                          </div>
+                          
+                          <div class="full-banner-cta1 ">
+                             <a href="https://www.1mg.com/online-doctor-consultation/chat?utm_source=web&amp;utm_medium=landing_page_promo&amp;utm_campaign=coronavirus_covid19&amp;utm_term=chat " style="text-decoration: none; cursor: pointer;
+                                            " target="_blank ">
+                             <button class="btn-bgstroke "><span class="btn1-text ">CONSULT NOW</span></button>
+                          </a>
+                          </div>
+                       </div>
+                       <div class="col-sm-5 m-p-0 align-self-center ">
+                          <img class="img-res " src="https://marketing-compaigns.s3.ap-south-1.amazonaws.com/emailer/Corona_landing_page/consult-doc.png " alt="Talk to our experts ">
+                       </div>
+                    </div>
+                </section>
+                 </center>
+            </section>
+            <br />
+            <br />
+            <section>
+                <center>
+                    <section class="header ">
+                    <h3><b><em>Take Vaccine</em></b></h3>
+                    <h4><b>Vaccination is our First Step to Secure your Life</b></h4>
+                    <h5><b>Vaccination ensured,Life secured</b></h5>
+                    <a href="https://www.cowin.gov.in/ " style="text-decoration: none; cursor: pointer; "target="_blank ">
+                        <button class="btn-bgstroke "><span class="btn1-text ">Book your Slot</span></button>
+                    </a>
+                    <br />
+                    <br />
+                    <img clas="img-res " src="icon/m1.jpg " alt="Take Vaccine ">
+                    </section>
+                </center>
+            </section>
+            <br />
+            <br />
+            <section>
+                <footer>
+          
+
+                  
+                    <a href="https://contact-us.samrudhihanmant.repl.co/ "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; Contact </a>
+                    <a href="# ">Copyright@2021</a>
+                    <a href="# ">Terms and use</a>
+                    <a href=" ">Cookies Policy</a>
+                    <a href=" " alt=" ">FAQ</a>
+                    <a href="# ">Write Us</a>
+                    <a href="https://www.blogger.com/blog/posts/5579215548951393236 ">Blog</a>
+                    
+                  </footer>
+            </section>
+            </main>
+    </body>
+
+</html>
